@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+    <h1>Choose data you want to get: </h1>
+    <!-- Invoke error message if exist -->
+    {% for msg in get_flashed_messages() %}
+    <div>{{ msg }}</div>
+    {% endfor %}
+
+    <!-- form block -->
+    <form method="POST" action="/results">
+        <select name="selected_request" onchange="updateForm()">
+            	<option value="0">Provide its average exchange rate</option>
+                <option value="1">Provide the max and min average values</option>
+                <option value="2">Provide the major difference between the buy and ask rate</option>
+        </select>
+
+        <table>
+                <tr><td>Enter a currency code:</td><td><input name="currency_code" type="TEXT"></td></tr>
+                <tr><td>Enter a date in format YYYY-MM-DD:</td><td><input name="date_or_period" type="TEXT"></td></tr>
+
+        </table>
+        <p><input value="get result" type="SUBMIT"></p>
+    </form>
+    <!-- end of form block -->
+
+    <p>Available currencies:</p>
+    <p id="currency">{{ available_cur }}</p>
+
+</body>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</html>
