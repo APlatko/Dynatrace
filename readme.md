@@ -11,8 +11,10 @@ Source is http://api.nbp.pl/
 How to use:
 
 - To run server enter in terminal 'python server_main.py'.
-- Go to browser and enter 'http://127.0.0.1:5000'.
+- Go to browser and enter 'http://localhost:5000'.
 - Choose one of the request and enter the required data.
 - Get the result.
 
+
+Link for docker image: https://hub.docker.com/repository/docker/aplatko/dynatrace-web/general
 
